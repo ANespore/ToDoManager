@@ -13,6 +13,7 @@ public class Main {
             System.out.println("Welcome to do Manager, please choose option ");
             System.out.println("1. Create new list");
             System.out.println("2. Delete list");
+            System.out.println("3. Add new task to list");
             System.out.println("\n Enter Quit to end program ... ");
             System.out.println("Choose a number:");
             userInput = scanner.nextLine();
@@ -30,6 +31,10 @@ public class Main {
                     System.out.println("Please enter list name");
                     String delList = scanner.nextLine();
                     System.out.println( managerController.deleteList(delList));
+                    break;
+                case "3":
+                    System.out.println("Please enter task name");
+                    String taskName = scanner.nextLine();
                     break;
 
 
