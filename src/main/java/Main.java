@@ -1,15 +1,18 @@
+import ToDoManager.ManagerController;
+
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-
+        ManagerController managerController = new ManagerController();
         Scanner scanner = new Scanner(System.in);
         String userInput = "";
 
         do {
             System.out.println("Welcome to do Manager, please choose option ");
             System.out.println("1. Create new list");
+            System.out.println("2. Delete list");
             System.out.println("\n Enter Quit to end program ... ");
             System.out.println("Choose a number:");
             userInput = scanner.nextLine();
@@ -18,6 +21,17 @@ public class Main {
                 case "Quit":
                     System.out.println("Exiting application....");
                     break;
+                case "1":
+                    System.out.println("Please enter list name");
+                    String listName = scanner.nextLine();
+                    System.out.println( managerController.createList(listName));
+                    break;
+                case "2":
+                    System.out.println("Please enter list name");
+                    String delList = scanner.nextLine();
+                    System.out.println( managerController.deleteList(delList));
+                    break;
+
 
             }
 

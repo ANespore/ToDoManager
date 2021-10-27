@@ -7,12 +7,12 @@ public class Tasks {
     public int id;
     public String TaskName;
     public String dueDate ;
-    public char mark ;
+    public String taskStatus ;
 
-    public Tasks(String TaskName, String dueDate, char mark) {
+    public Tasks(String TaskName, String dueDate, String taskStatus) {
         this.TaskName = TaskName;
         this.dueDate = dueDate;
-        this.mark = mark;
+        this.taskStatus = taskStatus;
     }
 
     public  Tasks () {
@@ -26,7 +26,7 @@ public class Tasks {
                 "id=" + id +
                 ", TaskName='" + TaskName + '\'' +
                 ", dueDate=" + dueDate +
-                ", mark=" + mark +
+                ", taskStatus=" + taskStatus +
                 '}';
     }
 }
