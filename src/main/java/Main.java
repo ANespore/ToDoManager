@@ -35,6 +35,11 @@ public class Main {
                 case "3":
                     System.out.println("Please enter task name");
                     String taskName = scanner.nextLine();
+                    System.out.println("Please enter due date");
+                    String dueDate = scanner.nextLine();
+                    System.out.println("Please enter task status");
+                    String taskStatus = scanner.nextLine();
+                    System.out.println( managerController.createTask(taskName,dueDate,taskStatus));
                     break;
 
 

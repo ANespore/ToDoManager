@@ -1,5 +1,6 @@
 package ToDoManager;
 
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class ManagerController {
@@ -32,4 +33,19 @@ public class ManagerController {
 
 
     }
+
+    public String createTask(String TaskName,String dueDate,String taskStatus) {
+
+        try {
+            managerRepository.createTask(TaskName,dueDate,taskStatus);
+            return "Task created successfully";
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return "Error creating task!";
+
+        }
+
+
+    }
+
 }
