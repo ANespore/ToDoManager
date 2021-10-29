@@ -2,6 +2,7 @@ package ToDoManager;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class ManagerController {
 
@@ -34,10 +35,10 @@ public class ManagerController {
 
     }
 
-    public String createTask(String TaskName,String description,String dueDate,String taskStatus) {
+    public String createTask(String existListName, String TaskName,String description,String dueDate,String taskStatus) {
 
         try {
-            managerRepository.createTask(TaskName,description,dueDate,taskStatus);
+            managerRepository.createTask(existListName,TaskName,description,dueDate,taskStatus);
             return "Task created successfully";
         } catch (SQLException e) {
             e.printStackTrace();
@@ -47,5 +48,38 @@ public class ManagerController {
 
 
     }
+
+
+    public ArrayList getAllLists() {
+        try {
+            return managerRepository.getAllLists();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+
+    }
+
+    public ArrayList<Tasks> getAllTasks(String existListName2) {
+
+        try {
+            return managerRepository.getAllTasks(existListName2);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public String deleteTask (String deleteList, int id) {
+        try {
+            managerRepository.delete(deleteList,id);
+            return"Task deleted successfully!";
+        } catch (SQLException e) {
+            System.out.println(e);
+            return "Error deleting task!";
+        }
+    }
+
+
 
 }
