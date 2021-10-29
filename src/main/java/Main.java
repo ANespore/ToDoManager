@@ -71,9 +71,10 @@ public class Main {
                     int idOfTask = intScanner.nextInt();
                     System.out.println("Please enter field name You want to update (TaskName,dueDate,taskStatus,description)");
                     String fieldToUpdate = scanner.nextLine();
-                    System.out.println("Please enter new value of field"+fieldToUpdate);
+                    System.out.println("Please enter new value of field: " +fieldToUpdate);
                     String newValue = scanner.nextLine();
                     System.out.println(managerController.updateTask(existListName3,idOfTask,fieldToUpdate,newValue));
+                    break;
                 case "7":
                     System.out.println("Please enter list name You want use");
                     System.out.println(managerController.getAllLists());
