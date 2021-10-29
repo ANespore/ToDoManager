@@ -34,10 +34,10 @@ public class ManagerController {
 
     }
 
-    public String createTask(String TaskName,String dueDate,String taskStatus) {
+    public String createTask(String TaskName,String description,String dueDate,String taskStatus) {
 
         try {
-            managerRepository.createTask(TaskName,dueDate,taskStatus);
+            managerRepository.createTask(TaskName,description,dueDate,taskStatus);
             return "Task created successfully";
         } catch (SQLException e) {
             e.printStackTrace();

@@ -11,7 +11,7 @@ public class ManagerRepository {
 
     public   void createList (String listName) throws SQLException {
 
-        String query = "Create table $listName (id int primary key not null auto_increment, TaskName VARCHAR (255) not null, dueDate VARCHAR (255) not null,taskStatus int not null)";
+        String query = "Create table $listName (id int primary key not null auto_increment, TaskName VARCHAR (255) not null,description VARCHAR (255) not null, dueDate VARCHAR (255) not null,taskStatus int not null)";
         String queryNew =query.replace("$listName",listName);
         PreparedStatement preparedStatement  = dbHandler.getConnection().prepareStatement(queryNew);
 
@@ -29,15 +29,16 @@ public class ManagerRepository {
         preparedStatement.close();
     }
 
-    public void createTask (String TaskName,String dueDate,String taskStatus) throws SQLException{
+    public void createTask (String TaskName,String description, String dueDate,String taskStatus) throws SQLException{
         String query = "INSERT INTO MyList (TaskName, dueDate, taskStatus) VALUES (?,?,?)";
 
 
         PreparedStatement preparedStatement = dbHandler.getConnection().prepareStatement(query);
 
         preparedStatement.setString(1, TaskName);
-        preparedStatement.setString(2, dueDate);
-        preparedStatement.setString(3, taskStatus);
+        preparedStatement.setString(2, description);
+        preparedStatement.setString(3, dueDate);
+        preparedStatement.setString(4, taskStatus);
 
         preparedStatement.execute();
         preparedStatement.close();
