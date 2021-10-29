@@ -84,7 +84,7 @@ public class ManagerRepository {
             String dueDate = results.getString("dueDate");
             String taskStatus = results.getString ("taskStatus");
 
-            Tasks tasks = new Tasks(TaskName, dueDate, taskStatus, description);
+            Tasks tasks = new Tasks(TaskName, description, dueDate, taskStatus);
             task.add(tasks);
         }
 
@@ -100,6 +100,21 @@ public class ManagerRepository {
 
         preparedStatement.execute();
         preparedStatement.close();
+    }
+
+
+    public void updateTask (String existListName3, int idOfTask, String fieldToUpdate,String newValue) throws SQLException {
+        String query = "Update $existListName3 SET $fieldToUpdate = ?  where id = ?" ;
+        String queryNew =query.replace("$existListName3",existListName3);
+        String queryFinal = queryNew.replace("$fieldToUpdate",fieldToUpdate);
+        PreparedStatement preparedStatement =dbHandler.getConnection().prepareStatement(queryFinal);
+        preparedStatement.setString(1,newValue);
+        preparedStatement.setInt(2,idOfTask);
+
+        preparedStatement.execute();
+        preparedStatement.close();
+
+
     }
 
 

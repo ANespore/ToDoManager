@@ -81,5 +81,16 @@ public class ManagerController {
     }
 
 
+    public String   updateTask(String existListName3, int idOfTask, String fieldToUpdate,String newValue) {
+        try {
+
+            managerRepository.updateTask(existListName3,idOfTask,fieldToUpdate,newValue);
+            return  "Task updated successfully";
+        } catch (SQLException e) {
+            System.out.println(e);
+            return  "Can't update task";
+
+        }
+    }
 
 }
