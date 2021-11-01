@@ -90,7 +90,7 @@ public class ManagerRepository {
 
         return task;
     }
-
+// delete task
     public static void delete(String deleteList, int id) throws SQLException {
         String query = "DELETE FROM $deleteList WHERE id=?";
         String queryNew =query.replace("$deleteList",deleteList);
