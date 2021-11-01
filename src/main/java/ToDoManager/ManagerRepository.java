@@ -102,7 +102,7 @@ public class ManagerRepository {
         preparedStatement.close();
     }
 
-
+//update Task code
     public void updateTask (String existListName3, int idOfTask, String fieldToUpdate,String newValue) throws SQLException {
         String query = "Update $existListName3 SET $fieldToUpdate = ?  where id = ?" ;
         String queryNew =query.replace("$existListName3",existListName3);
