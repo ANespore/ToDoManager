@@ -10,7 +10,8 @@ public class Tasks {
     public String taskStatus;
     public String description ;
 
-    public Tasks(String TaskName, String description, String dueDate, String taskStatus ) {
+    public Tasks(int id, String TaskName, String description, String dueDate, String taskStatus ) {
+        this.id = id;
         this.TaskName = TaskName;
         this.dueDate = dueDate;
         this.taskStatus = taskStatus;

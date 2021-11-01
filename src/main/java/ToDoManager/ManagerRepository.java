@@ -84,7 +84,7 @@ public class ManagerRepository {
             String dueDate = results.getString("dueDate");
             String taskStatus = results.getString ("taskStatus");
 
-            Tasks tasks = new Tasks(TaskName, description, dueDate, taskStatus);
+            Tasks tasks = new Tasks(id, TaskName, description, dueDate, taskStatus);
             task.add(tasks);
         }
 
